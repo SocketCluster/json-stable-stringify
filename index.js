@@ -1,6 +1,6 @@
-var json = typeof JSON !== 'undefined' ? JSON : require('jsonify');
+var json = JSON;
 
-module.exports = function (obj, opts) {
+var jsonStableStringify = function (obj, opts) {
     if (!opts) opts = {};
     if (typeof opts === 'function') opts = { cmp: opts };
     var space = opts.space || '';
